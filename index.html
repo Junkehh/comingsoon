@@ -75,7 +75,7 @@
     <div class="center">
       <span class="animated">C</span>
       <span class="animated">O</span>
-<span class="animated">M</span>
+      <span class="animated">M</span>
       <span class="animated">I</span>
       <span class="animated">N</span>
       <span class="animated">G</span>
@@ -99,15 +99,43 @@
       center.style.fontFamily = fonts[Math.floor(Math.random() * fonts.length)];
       center.style.userSelect = 'none';
       
-      window.addEventListener('keydown', (event) => {
-        if (event.code === 'KeyN') {
-          pressCount += 1;
+      center.addEventListener('click', (event) => {
+        if (event.target.textContent === 'C') {
+          center.style.fontFamily = fonts[Math.floor(Math.random() * fonts.length)];
+        } else if (event.target.textContent === 'S') {
+          currentImageIndex = (currentImageIndex + 1) % images.length;
+          document.body.style.backgroundImage = `url(${images[currentImageIndex]})`;
+          textColor = textColor === 'white' ? 'black' : 'white';
+          center.style.color = textColor;
+        } else if (event.target.textContent === 'G') {
+          pressCount++;
+          if (pressCount === 10) {
+            document.body.style.backgroundImage = `url('https://imgur.com/Tmc8Bpr.png')`;
+          } else if (pressCount === 20) {
+            pressCount = 0;
+            document.body.style.backgroundImage = `url(${images[currentImageIndex]})`;
+          }
         }
-        
-        if (pressCount === 10) {
-          window.location.href = 'links.html';
-        }
+      });
+      
+      const animated = document.querySelectorAll('.animated');
+      
+      animated.forEach((span) => {
+        span.addEventListener('mouseover', (event) => {
+          if (event.target.textContent === 'C' || event.target.textContent === 'S' || event.target.textContent === 'G') {
+            event.target.style.cursor = 'pointer';
+          }
+        });
+      });
+      
+      const letters = document.querySelectorAll('.letter');
+      
+      letters.forEach((letter, index) => {
+        setTimeout(() => {
+          letter.classList.add('jump');
+        }, index * 100);
       });
     </script>
   </body>
 </html>
+
