@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Event</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            font-family: 'ORB', sans-serif;
+            color: #fff; /* Change the color of the central text to white */
+        }
+
+        @font-face {
+            font-family: 'ORB';
+            src: url('ORB.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 72px; /* Increase the font size for the central text */
+            background: linear-gradient(to right, #0066FF, #8F00FF);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            font-family: 'ORB', sans-serif; /* Apply the custom font */
+        }
+
+        button {
+            padding: 40px 80px; /* Increase the padding for the button */
+            border: none;
+            border-radius: 30px; /* Increase the border-radius for a more rounded appearance */
+            font-size: 48px; /* Increase the font size for the button text */
+            font-weight: bold;
+            color: #000;
+            background: linear-gradient(to right, #0066FF, #8F00FF);
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            font-family: 'ORB', sans-serif; /* Apply the custom font */
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #8F00FF, #0066FF);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up To The Event</h1>
+        <button onclick="window.location.href='https://form.jotform.com/233506936150454'">Sign Up</button>
+    </div>
+</body>
+</html>
